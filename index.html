@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Strike Guitars - Student Dashboard</title>
+    
+    <style>
+        /* ROOT CORPORATE COLOR VARIABLES */
+        :root {
+            --crimson-red: #A61C24;    /* Crimson/Blood Red: Holy Ghost fire & active focus accents */
+            --royal-purple: #3A1B5D;   /* Royal Purple: Structural navigation panels & framing */
+            --deep-charcoal: #121212;  /* High-end dark background surface */
+            --soft-white: #F5F5F7;     /* High-contrast crisp readability text */
+            --muted-gray: #8E8E93;     /* Outlined borders and secondary items */
+        }
+
+        /* BASE STRUCTURAL RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--deep-charcoal);
+            color: var(--soft-white);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* SIDEBAR ARCHITECTURE */
+        .sidebar {
+            width: 280px;
+            background-color: var(--royal-purple);
+            border-right: 1px solid var(--muted-gray);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .brand-logo {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .logo-area h2 {
+            font-size: 1.2rem;
+            color: var(--soft-white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-section-title {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--muted-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 20px 0 10px 0;
+        }
+
+        .navigation-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .nav-item {
+            color: var(--soft-white);
+            text-decoration: none;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            transition: background 0.2s ease;
+        }
+
+        .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-item.active {
+            background-color: var(--crimson-red);
+            font-weight: bold;
+        }
+
+        /* MAIN BODY WORKSPACE */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .top-header {
+            height: 70px;
+            background-color: #1A1A1A;
+            border-bottom: 1px solid var(--muted-gray);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+        }
+
+        .login-status {
+            background-color: var(--crimson-red);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .workspace-viewport {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 960px;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            border: 2px solid var(--royal-purple);
+        }
+
+        video {
+            width: 100%;
+            display: block;
+        }
+
+        .lesson-details h2 {
+            color: var(--crimson-red);
+            margin-bottom: 10px;
+        }
+
+        .lesson-details p {
+            line-height: 1.6;
+            color: #CCCCCC;
+        }
+
+        /* RESPONSIVE RESPONSIVENESS (MOBILE COLLAPSE RULES) */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--muted-gray);
+            }
+            .main-content {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo-area">
+            <img src="RSG_Icon_Only_Master.svg" alt="Rock Strike Guitars Logo" class="brand-logo">
+            <h2>Rock Strike Guitars</h2>
+        </div>
+        
+        <nav class="navigation-menu">
+            <span class="nav-section-title">Syllabus Pillars</span>
+            <a href="#" class="nav-item active">Module 1: Essential Open Chords</a>
+            <a href="#" class="nav-item">Module 2: Minor Pentatonic Mastery</a>
+            <a href="#" class="nav-item">Module 3: Advanced Lead Techniques</a>
+            
+            <span class="nav-section-title">Tools & Resources</span>
+            <a href="#" class="nav-item">Audio Metronome Engine</a>
+            <a href="#" class="nav-item">Interactive Chord Dictionary</a>
+            <a href="#" class="nav-item">Account Settings / Support</a>
+        </nav>
+    </aside>
+
+    <div class="main-content">
+        <header class="top-header">
+            <div class="header-left">
+                <h3>Welcome back, Student</h3>
+            </div>
+            <div class="header-right">
+                <div class="login-status">Account Level: Premium Member</div>
+            </div>
+        </header>
+
+        <main class="workspace-viewport">
+            <div class="video-container">
+                <video src="your-secure-lesson-video.mp4" controls poster="video-placeholder.png"></video>
+            </div>
+            
+            <div class="lesson-details">
+                <h2>Lesson 1: Striking the G Major Chord Cleanly</h2>
+                <p>Focus completely on striking every individual string cleanly. Keep your knuckles curved and compare your resonance clarity directly to standard classic rock tone execution architectures.</p>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
